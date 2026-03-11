@@ -10,3 +10,8 @@ func _ready() -> void:
 		get_viewport().use_xr = true
 	else:
 		print("OpenXR not initialized. Running in flat mode.")
+
+func _process(_delta: float) -> void:
+	# Quit on back/B button or Escape key
+	if Input.is_action_just_pressed("ui_cancel"):
+		get_tree().quit()
